@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WorkShortcuts</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background: linear-gradient(to right, #6a11cb, #2575fc);
+        color: white;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 3em;
+        margin-bottom: 20px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .button-container {
+        margin: 20px 0;
+      }
+
+      .button {
+        background-color: #ffffff;
+        color: #6a11cb;
+        border: none;
+        padding: 10px 20px;
+        margin: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      .button:hover {
+        background-color: #6a11cb;
+        color: #ffffff;
+      }
+
+      .search-bar {
+        margin-top: 20px;
+      }
+
+      input[type="text"] {
+        padding: 10px;
+        width: 300px;
+        font-size: 1em;
+        border-radius: 5px;
+        border: 1px solid #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>WorkShortcuts</h1>
+    <div class="button-container">
+      <button
+        class="button"
+        onclick="window.location.href='https://jsd-dfms-sfcwebreports.foxconn-na.com/index.jsp'"
+      >
+        DFMS
+      </button>
+      <button
+        class="button"
+        onclick="window.location.href='https://jsd.foxconn-na.com/QIMS_AP/'"
+      >
+        QIMS
+      </button>
+      <button
+        class="button"
+        onclick="window.location.href='https://fsj-otrs.foxconn-na.com//otrs/public.pl'"
+      >
+        OTRS
+      </button>
+      <!-- Add more buttons as needed -->
+    </div>
+    <div class="search-bar">
+      <form onsubmit="return searchGoogle()">
+        <input type="text" id="searchQuery" placeholder="Search Google..." />
+      </form>
+    </div>
+
+    <script>
+      function searchGoogle() {
+        const query = document.getElementById("searchQuery").value;
+        if (query) {
+          window.location.href = `https://www.google.com/search?q=${encodeURIComponent(
+            query
+          )}`;
+        }
+        return false; // Prevent form submission
+      }
+    </script>
+  </body>
+</html>
